@@ -20,15 +20,28 @@ Everything is stored inside `~/.config/dwm` — simple, fast, and hacker-friendl
 - 💾 Works on both Debian 13 & Arch Linux Zen
 
 
-## ⚙️ Installation
+## 🚀 Quick Install (Online)
 
-### 🧠 Debian 13
+🧠 Debian 13
+
+wget https://raw.githubusercontent.com/dennishilk/dwm-setup/main/install_debian13.sh
+
+chmod +x install_debian13.sh
 
 sudo ./install_debian13.sh
 
-🐧 Arch Linux Zen
+##
+
+
+🐧 Arch Linux
+
+wget https://raw.githubusercontent.com/dennishilk/dwm-setup/main/install_arch_zen.sh
+
+chmod +x install_arch_zen.sh
 
 sudo ./install_arch_zen.sh
+
+##
 
 After installation:
 
@@ -37,6 +50,7 @@ Reboot
 Log in on TTY1
 
 DWM starts automatically 🎉
+##
 
 📦 Requirements
 Package	Purpose
@@ -46,6 +60,7 @@ git, curl, wget, fastfetch	utilities
 zram-tools / zram-generator	compressed RAM swap
 
 All required packages are installed automatically by the installers.
+##
 
 
 🧰 Customization
