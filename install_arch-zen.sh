@@ -50,10 +50,24 @@ cd dwm-src
 make clean && make && make install
 cd /
 
-# Copy configs
-mkdir -p "$CONFIG_DIR"
-cp -r "$(dirname "$0")/dwm-setup/"* "$CONFIG_DIR/"
+# === 🔍 Find and copy DWM setup files ===
+echo "=== 🔍 Locating dwm-setup directory..."
+INSTALL_DIR="$(cd "$(dirname "$0")" && pwd)"
+
+if [ -d "$INSTALL_DIR/dwm-setup" ]; then
+  echo "Found: $INSTALL_DIR/dwm-setup"
+  cp -r "$INSTALL_DIR/dwm-setup/"* "$CONFIG_DIR/"
+elif [ -d "$INSTALL_DIR/../dwm-setup" ]; then
+  echo "Found: $INSTALL_DIR/../dwm-setup"
+  cp -r "$INSTALL_DIR/../dwm-setup/"* "$CONFIG_DIR/"
+else
+  echo "⚠️  Could not find the dwm-setup directory!"
+  echo "Please make sure the folder 'dwm-setup/' exists next to this installer."
+  exit 1
+fi
+
 chown -R "$USER_NAME:$USER_NAME" "$CONFIG_DIR"
+
 
 # Autostart at login
 BASH_PROFILE="$USER_HOME/.bash_profile"
