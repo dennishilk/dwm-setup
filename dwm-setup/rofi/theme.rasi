@@ -1,0 +1,19 @@
+configuration {
+    modi: "drun,run";
+    font: "JetBrainsMono Nerd Font 12";
+    show-icons: true;
+    icon-theme: "Papirus";
+}
+window {
+    transparency: "real";
+    background-color: rgba(15, 18, 25, 0.8);
+    border-radius: 10px;
+}
+element {
+    padding: 5px;
+    border-radius: 5px;
+}
+element selected {
+    background-color: rgba(70,130,180,0.4);
+}
+
